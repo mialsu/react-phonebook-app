@@ -30,17 +30,27 @@ const Entry = (props) => {
 
 const App = () => {
   const title = 'Superadvanced web phonebook app'
-  const name1 = 'John Doe'
-  const phone1 = '358401234567'
-  const name2 = 'Jane Doe'
-  const phone2 = '44551234567'
-  const name3 = 'Foo bar'
-  const phone3 = '000'
+  const contact1 = {
+    name: 'John Doe',
+    phonenumber: '358401234567'
+  }
+  const contact2 = {
+    name: 'Jane Doe',
+    phonenumber: '44551234567'
+  }
+  const contact3 = {
+    name: 'Foo bar',
+    phonenumber: '000'
+  }
 
   return (
     <div>
       <Header title={title} />
-      <Contents name1={name1} phone1={phone1} name2={name2} phone2={phone2} name3={name3} phone3={phone3}/>
+      <Contents 
+        name1={contact1.name} phone1={contact1.phonenumber} 
+        name2={contact2.name} phone2={contact2.phonenumber}
+        name3={contact3.name} phone3={contact3.phonenumber}
+      />
     </div>
   )
 }
