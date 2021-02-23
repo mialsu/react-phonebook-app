@@ -1,17 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+const Header = (props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+    </div>
+  )
+}
+
+const Contents = (props) => {
+
+  return (
+    <div>
+      <Entry name={props.name1} phone={props.phone1}/>
+      <Entry name={props.name2} phone={props.phone2}/>
+      <Entry name={props.name3} phone={props.phone3}/>
+    </div>
+  )
+}
+
+const Entry = (props) => {
+  return (
+    <div>
+      <p>{props.name} {props.phone}</p>
+    </div>
+  )
+}
+
+const App = () => {
+  const title = 'Superadvanced web phonebook app'
+  const name1 = 'John Doe'
+  const phone1 = '358401234567'
+  const name2 = 'Jane Doe'
+  const phone2 = '44551234567'
+  const name3 = 'Foo bar'
+  const phone3 = '000'
+
+  return (
+    <div>
+      <Header title={title} />
+      <Contents name1={name1} phone1={phone1} name2={name2} phone2={phone2} name3={name3} phone3={phone3}/>
+    </div>
+  )
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
