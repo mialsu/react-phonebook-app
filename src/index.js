@@ -30,8 +30,9 @@ const Entry = (props) => {
 }
 
 const App = () => {
-  const title = 'Superadvanced web phonebook app'
-  const contacts = [
+  const phonebookapp = {
+    title: 'Superadvanced web phonebook app',
+    contacts: [
     {
       name: 'John Doe',
       phonenumber: '358401234567'
@@ -44,12 +45,13 @@ const App = () => {
       name: 'Foo bar',
       phonenumber: '000'
     }
-  ]
+    ]
+  }
   
   return (
     <div>
-      <Header title={title} />
-      <Contents contacts = {contacts} />
+      <Header title={phonebookapp.title} />
+      <Contents contacts = {phonebookapp.contacts} />
     </div>
   )
 }
