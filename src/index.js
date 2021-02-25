@@ -10,12 +10,12 @@ const Header = (props) => {
 }
 
 const Contents = (props) => {
-
+  const contacts = props.contacts
   return (
     <div>
-      <Entry name={props.name1} phone={props.phone1} />
-      <Entry name={props.name2} phone={props.phone2} />
-      <Entry name={props.name3} phone={props.phone3} />
+      <Entry name={contacts[0].name} phone={contacts[0].phonenumber} />
+      <Entry name={contacts[1].name} phone={contacts[1].phonenumber} />
+      <Entry name={contacts[2].name} phone={contacts[2].phonenumber} />
     </div>
   )
 }
@@ -45,15 +45,11 @@ const App = () => {
       phonenumber: '000'
     }
   ]
-
+  
   return (
     <div>
       <Header title={title} />
-      <Contents
-        name1={contacts[0].name} phone1={contacts[0].phonenumber}
-        name2={contacts[1].name} phone2={contacts[1].phonenumber}
-        name3={contacts[2].name} phone3={contacts[2].phonenumber}
-      />
+      <Contents contacts = {contacts} />
     </div>
   )
 }
