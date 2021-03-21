@@ -1,37 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Header = (props) => {
-  return (
-    <div>
-      <h1>{props.title}</h1>
-    </div>
-  )
-}
+const Phonebook = (props) => {
+  const { phonebook } = props;
+  const contacts = phonebook.contacts
 
-const Contents = (props) => {
-  const contacts = props.contacts
-  return (
+  return(
     <div>
-      <Entry name={contacts[0].name} phone={contacts[0].phonenumber} />
-      <Entry name={contacts[1].name} phone={contacts[1].phonenumber} />
-      <Entry name={contacts[2].name} phone={contacts[2].phonenumber} />
-    </div>
-  )
-}
-
-const Entry = (props) => {
-
-  return (
-    <div>
-      <p>{props.name} {props.phone}</p>
+      <h1>{phonebook.name}</h1>
+      <p>
+        {contacts.map(contact => <p><b>Name:</b> {contact.name} <b>Phone:</b> {contact.phonenumber}</p>)}
+      </p>
+      <p>Total number of entries: {contacts.length}</p>
     </div>
   )
 }
 
 const App = () => {
-  const phonebookapp = {
-    title: 'Superadvanced web phonebook app',
+  const phonebook = {
+    name: 'Superadvanced web phonebook app',
     contacts: [
     {
       name: 'John Doe',
@@ -50,8 +37,7 @@ const App = () => {
   
   return (
     <div>
-      <Header title={phonebookapp.title} />
-      <Contents contacts = {phonebookapp.contacts} />
+      <Phonebook phonebook = {phonebook} />
     </div>
   )
 }
