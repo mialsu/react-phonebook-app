@@ -31,6 +31,10 @@ const App = () => {
     {
       name: 'Foo bar',
       phonenumber: '000'
+    },
+    {
+      name: 'xxx',
+      phonenumber: '666'
     }
     ]
   }
